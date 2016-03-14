@@ -1,0 +1,23 @@
+{
+  "name": "iMessages",
+  "version": "0.0.1",
+  "description": "Message service",
+  "main": "main.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valshin/iMessages.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valshin/iMessages/issues"
+  },
+  "homepage": "https://github.com/valshin/iMessages",
+  "dependencies": {
+    "iRabbit": "git://github.com/kronius/iRabbit.git#master"
+  },
+  "author": {
+    "name": "Valery Shinkarenko",
+    "email": "valshin2@gmail.com"
+  }
+}
