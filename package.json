@@ -14,7 +14,11 @@
   },
   "homepage": "https://github.com/valshin/iMessages",
   "dependencies": {
-    "iRabbit": "git://github.com/kronius/iRabbit.git#master"
+    "iRabbit": "git://github.com/kronius/iRabbit.git#master",
+    "nodemailer": "git://github.com/nodemailer/nodemailer.git#master"
+  },
+  "devDependencies": {
+    "mocha": "git://github.com/mochajs/mocha.git#master"
   },
   "author": {
     "name": "Valery Shinkarenko",
