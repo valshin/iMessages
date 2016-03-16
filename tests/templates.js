@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var TemplateService = require('../templateServices/simple/templates.js');
+var TemplateService = require('./simple/templates.js');
 var Message = require('../entities/message.js');
 TemplateService.prototype.TEMPLATES = {
     default_message: {
