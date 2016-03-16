@@ -15,7 +15,9 @@
   "homepage": "https://github.com/valshin/iMessages",
   "dependencies": {
     "iRabbit": "git://github.com/kronius/iRabbit.git#master",
-    "nodemailer": "git://github.com/nodemailer/nodemailer.git#master"
+    "nodemailer": "git://github.com/nodemailer/nodemailer.git#master",
+    "mongodb": "~2.1.7",
+    "log4js": "~0.6.33"
   },
   "devDependencies": {
     "mocha": "git://github.com/mochajs/mocha.git#master"

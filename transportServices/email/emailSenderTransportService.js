@@ -1,15 +1,14 @@
 var nodemailer = require("../../node_modules/nodemailer/lib/nodemailer.js"),
-    config = require('./config.js'),
-    Sender = require('../sender.js'),
-    TemplateService = require('../../templates/templates.js');
+    config = require('../../conf.js'),
+    utils = require('../../utils/utils.js'),
+    SenderInterface = require('../senderInterface.js'),
+    TemplateService = require('../../templateServices/' + config.services.templateService);
 
 var EmailSender = function(){
-    Sender.call(this, 'email');
     this.smtpTransport = nodemailer.createTransport("SMTP", config);
     this.templateService = new TemplateService();
 };
-EmailSender.prototype = Object.create(Sender.prototype);
-EmailSender.prototype.constructor = EmailSender;
+utils.extend(EmailSender, SenderInterface);
 
 /**
  * @param {Message} msg
@@ -23,4 +22,3 @@ EmailSender.prototype.package = function(){
 };
 
 module.exports = EmailSender;
-

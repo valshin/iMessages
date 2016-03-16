@@ -1,10 +1,3 @@
-var MSG_TYPES = {
-    registration_confirm : true,
-    registration_success : true,
-    password_change : true,
-    new_vacancy : true
-};
-
 var Message = function(msgStr){
     this.user = undefined;
     this.type = undefined;

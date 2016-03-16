@@ -1,10 +1,15 @@
 'use strict';
-var config = require('../conf.js');
+var config = require('../../conf.js'),
+    utils = require('../../utils/utils.js'),
+    TemplateInterface = require('../templateInterface.js');
 
-var TemplateService = function () {
+
+var SimpleTemplates = function () {
+    TemplateInterface.call('SimpleTemplates');
 };
+utils.extend(SimpleTemplates, TemplateInterface);
 
-TemplateService.prototype.TEMPLATES = {
+SimpleTemplates.prototype.TEMPLATES = {
     default_message: {
         ru: 'Дефолтный месседж'
     },
@@ -24,7 +29,7 @@ TemplateService.prototype.TEMPLATES = {
 /**
  * @param {Message} msg
  */
-TemplateService.prototype.getMessage = function (msg) {
+SimpleTemplates.prototype.getMessage = function (msg) {
     if (this.TEMPLATES[msg.type] && this.TEMPLATES[msg.type][msg.locale]) {
         return this.TEMPLATES[msg.type][msg.locale];
     }
@@ -39,4 +44,4 @@ TemplateService.prototype.getMessage = function (msg) {
     }
 };
 
-module.exports = TemplateService;
+module.exports = SimpleTemplates;

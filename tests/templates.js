@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
-var TemplateService = require('../templates/templates.js');
-var Message = require('../message.js');
+var TemplateService = require('../templateServices/simple/templates.js');
+var Message = require('../entities/message.js');
 TemplateService.prototype.TEMPLATES = {
     default_message: {
         ru: 'Дефолтный_месседж',
