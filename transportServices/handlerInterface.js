@@ -4,7 +4,7 @@ var HandlerInterface = function(type){
 
 /**
  * @param {Message} msg
- * @returns {Message}
+ * @returns {HandlerInterface}
  */
 HandlerInterface.prototype.render = function(msg){
 
@@ -12,7 +12,7 @@ HandlerInterface.prototype.render = function(msg){
 
 /**
  * @param {Message} msg
- * @returns {Message}
+ * @returns {HandlerInterface}
  */
 HandlerInterface.prototype.package = function(msg){
 
@@ -20,7 +20,7 @@ HandlerInterface.prototype.package = function(msg){
 
 /**
  * @param {Message} msg
- * @returns {Message}
+ * @returns {HandlerInterface}
  */
 HandlerInterface.prototype.send = function(msg){
 

@@ -21,28 +21,31 @@ var conf = require('./conf.js'),
 var handlers = {};
 
 /**
- * @param {String} type
+ * @param {String} transportType
  * @returns {HandlerInterface}
  */
-var getMsgHandler = function (type) {
+var getMsgHandler = function (transportType) {
     if (!handlers[type]) {
         try {
-            handlers[type] = new require('./transportServices/' + conf.services.transports[type])();
+            handlers[type] = new require('./transportServices/' + conf.services.transports[transportType])();
         } catch (e) {
             logger.error(e.message);
             return null;
         }
     }
-    return handlers[type];
+    return handlers[transportType];
 };
 
 iRabbit.subscribeTopic('exchange.topic', 'notify').then(function (result) {
         iRabbit.on(result.eventName + ':message', function (incMsg) {
             var msg = new Message(incMsg);
-            var handler = getMsgHandler(msg.type);
-            msg = handler.render().package();
-            handler.send(msg);
-            console.log(result.eventName + ':message event: ', incMsg.message);
+            var transportType = '';
+            var handler = getMsgHandler(transportType);
+            if (handler){
+                handler.render(msg).package(msg);
+                handler.send(msg);
+                console.log(result.eventName + ':message event: ', incMsg.message);
+            }
         });
     })
     .catch(function (err) {

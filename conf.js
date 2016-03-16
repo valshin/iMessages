@@ -27,6 +27,16 @@ module.exports = {
             email: {
                 handler: 'email/emailHandlerTransportService.js',
                 sender: 'email/emailSenderTransportService.js'
+            },
+            defaults: {
+                user: {
+                    settings: {},
+                    balance: 0
+                },
+                message: {
+                    type: ''
+                },
+                connection: {}
             }
         },
         userData:{
