@@ -71,7 +71,7 @@ EmailHandler.prototype.merge = function(msg, messages){
 };
 
 EmailHandler.prototype.sendToDb = function(msg){
-    this.dbService.add(msg);
+    this.dbService.addMessage(msg);
 };
 
 EmailHandler.prototype.sendToQueue = function(msg){

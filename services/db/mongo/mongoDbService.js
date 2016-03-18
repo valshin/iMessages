@@ -8,7 +8,7 @@ var MongoDbService = function(){
 };
 utils.extend(MongoDbService, DbInterface);
 
-MongoDbService.prototype.add = function(){
+MongoDbService.prototype.addMessage = function(){
 };
 MongoDbService.prototype.getMessages = function(){
 };
