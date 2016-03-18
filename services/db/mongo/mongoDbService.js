@@ -4,7 +4,6 @@ var config = require('../../../conf.js'),
     MongoClient = require('mongodb').MongoClient;
 
 var MongoDbService = function(){
-    DbInterface.call(this, 'Mongo');
 };
 utils.extend(MongoDbService, DbInterface);
 

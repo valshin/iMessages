@@ -1,5 +1,4 @@
 var HandlerInterface = function(type){
-    this.type = type;
 };
 
 /**

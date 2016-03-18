@@ -1,5 +1,4 @@
-var DbInterface = function(type){
-    this.type = type;
+var DbInterface = function(){
 };
 DbInterface.prototype.addMessage = function(){
 };
