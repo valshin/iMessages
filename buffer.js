@@ -16,13 +16,13 @@ var conf = require('./conf.js'),
     logger = require('./utils/logger.js')('buffer');
 
 /**
- * @type {Object.<String, HandlerInterface>}
+ * @type {Object.<String, HandlerProto>}
  */
 var handlers = {};
 
 /**
  * @param {String} transportType
- * @returns {HandlerInterface}
+ * @returns {HandlerProto}
  */
 var getMsgHandler = function (transportType) {
     if (!handlers[type]) {

@@ -1,3 +1,9 @@
+var utils = require('../utils/utils.js'),
+    /**
+     * @type {logger}
+     */
+    logger = require('../utils/logger.js')('Message');
+
 var Message = function(msgStr){
     this._user = undefined;
     this._type = undefined;
@@ -5,15 +11,7 @@ var Message = function(msgStr){
     this._sendAt = undefined;
     this._layout = undefined;
     this._transport = undefined;
-    msgStr && this.fill(msgStr);
-};
-
-Message.prototype.fill = function(msgStr){
-    var msg = JSON.parse(msgStr);
-    this._user = msg.user;
-    this._type = msg.type;
-    this._locale = msg.locale;
-    this._sendAt = msg.sendAt;
+    msgStr && this.fromJson(msgStr);
 };
 
 Message.prototype.user = function(value){
@@ -56,6 +54,25 @@ Message.prototype.transport = function(value){
         return this._transport;
     }
     return this._transport = value;
+};
+
+Message.prototype.toJson = function(){
+    return utils.toJson(this);
+};
+
+/**
+ *
+ * @param {String} value
+ */
+Message.prototype.fromJson = function(value){
+    var inMsg =  JSON.parse(value);
+    utils.forEach(inMsg, function(value, field){
+        try {
+            this[field.replace('_', '')](value);
+        } catch (e) {
+            logger.error('Unknown message field: ' + field);
+        }
+    })
 };
 
 module.exports = Message;

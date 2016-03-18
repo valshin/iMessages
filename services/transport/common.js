@@ -6,4 +6,4 @@ setTransportType = function(msg){
     msg.transport = 'eamil';
 };
 
-module.exports= getTransportType;
+module.exports= setTransportType;

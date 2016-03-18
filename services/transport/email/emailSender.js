@@ -1,7 +1,7 @@
 var nodemailer = require("nodemailer"),
     config = require('../../../conf.js'),
     utils = require('../../../utils/utils.js'),
-    SenderInterface = require('../senderInterface.js'),
+    SenderInterface = require('../senderProto.js'),
     TemplateService = require('../../templateServices/' + config.services.templateService);
 
 var EmailSender = function(){

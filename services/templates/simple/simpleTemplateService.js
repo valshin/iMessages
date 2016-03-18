@@ -1,7 +1,7 @@
 'use strict';
 var config = require('../../../conf.js'),
     utils = require('../../../utils/utils.js'),
-    TemplateInterface = require('../templateInterface.js');
+    TemplateInterface = require('../templateProto.js');
 
 
 var SimpleTemplateService = function () {

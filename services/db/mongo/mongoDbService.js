@@ -1,5 +1,5 @@
 var config = require('../../../conf.js'),
-    DbInterface = require('../dbInterface.js'),
+    DbInterface = require('../dbProto.js'),
     utils = require('../../../utils/utils.js'),
     MongoClient = require('mongodb').MongoClient;
 

@@ -1,6 +1,6 @@
 var config = require('../../../conf.js'),
     utils = require('../../../utils/utils.js'),
-    HandlerInterface = require('../handlerInterface.js'),
+    HandlerInterface = require('../handlerProto.js'),
     TemplateService = require('../../templates/' + config.services.templateService),
     UserService = require('../../user/' + config.services.userData),
     DbService = require('../../db/' + config.services.dbService);
@@ -47,7 +47,7 @@ EmailHandler.prototype.package = function(msg){
 
 /**
  * @param {Message} msg
- * @returns {HandlerInterface}
+ * @returns {HandlerProto}
  */
 EmailHandler.prototype.send = function(msg){
     this.render(msg);
