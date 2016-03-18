@@ -1,5 +1,5 @@
-var config = require('../../conf.js'),
-    utils = require('../../utils/utils.js'),
+var config = require('../../../conf.js'),
+    utils = require('../../../utils/utils.js'),
     HandlerInterface = require('../handlerInterface.js');
 
 var EmailHandler = function(){

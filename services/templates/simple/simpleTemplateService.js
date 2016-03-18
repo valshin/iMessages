@@ -1,6 +1,6 @@
 'use strict';
-var config = require('../../conf.js'),
-    utils = require('../../utils/utils.js'),
+var config = require('../../../conf.js'),
+    utils = require('../../../utils/utils.js'),
     TemplateInterface = require('../templateInterface.js');
 
 

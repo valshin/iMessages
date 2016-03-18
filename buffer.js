@@ -27,7 +27,7 @@ var handlers = {};
 var getMsgHandler = function (transportType) {
     if (!handlers[type]) {
         try {
-            handlers[type] = new require('./transportServices/' + conf.services.transports[transportType])();
+            handlers[type] = new require('./services/transport/' + conf.services.transports[transportType])();
         } catch (e) {
             logger.error(e.message);
             return null;

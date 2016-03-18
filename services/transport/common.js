@@ -1,5 +1,9 @@
-getTransportType = function(params){
-    return 'email';
+/**
+ * @param {Message} msg
+ * @returns {string}
+ */
+setTransportType = function(msg){
+    msg.transport = 'eamil';
 };
 
 module.exports= getTransportType;

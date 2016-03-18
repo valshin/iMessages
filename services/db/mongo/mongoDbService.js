@@ -1,15 +1,15 @@
-var config = require('../../conf.js'),
+var config = require('../../../conf.js'),
     DbInterface = require('../dbInterface.js'),
-    utils = require('../../utils/utils.js'),
+    utils = require('../../../utils/utils.js'),
     MongoClient = require('mongodb').MongoClient;
 
-var Mongo = function(){
+var MongoDbService = function(){
     DbInterface.call(this, 'Mongo');
 };
-utils.extend(Mongo, DbInterface);
+utils.extend(MongoDbService, DbInterface);
 
-Mongo.prototype.create = function(){
+MongoDbService.prototype.create = function(){
 
 };
 
-module.exports = Mongo;
+module.exports = MongoDbService;

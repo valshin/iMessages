@@ -1,6 +1,6 @@
-var nodemailer = require("../../node_modules/nodemailer/lib/nodemailer.js"),
-    config = require('../../conf.js'),
-    utils = require('../../utils/utils.js'),
+var nodemailer = require("nodemailer"),
+    config = require('../../../conf.js'),
+    utils = require('../../../utils/utils.js'),
     SenderInterface = require('../senderInterface.js'),
     TemplateService = require('../../templateServices/' + config.services.templateService);
 
