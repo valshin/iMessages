@@ -8,5 +8,8 @@ module.exports = {
         for (var prop in Child.prototype) f[prop] = Child.prototype[prop];
         Child.prototype = f;
         Child.prototype[Parent.prototype.__class_name] = Parent.prototype;
+    },
+    now: function() {
+        return new Date().getTime();
     }
 };

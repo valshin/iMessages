@@ -21,27 +21,25 @@ module.exports = {
         }
     },
     services: {
-        templateService: 'simple/simpleTemplateService.js',
+        template: 'simple/simpleTemplateService.js',
         dbService: 'mongo/mongoDbService.js',
         transports: {
             email: {
-                handler: 'email/emailHandlerTransportService.js',
-                sender: 'email/emailSenderTransportService.js'
-            },
-            defaults: {
-                user: {
-                    settings: {},
-                    balance: 0
-                },
-                message: {
-                    type: ''
-                },
-                connection: {}
+                handler: 'email/emailHandler.js',
+                sender: 'email/emailSender.js',
+                from: 'from@from.from',
+                defaultService: 'gmail',
+                services: {
+                    gmail:{
+                        name: 'Gmail',
+                        type: 'SMTP',
+                        login: '',
+                        password: ''
+                    }
+                }
             }
         },
-        userData:{
-
-        }
+        userData: 'dummy/dummyUserDataService.js'
     },
     logging : {
         level: 'debug',

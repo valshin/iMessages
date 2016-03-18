@@ -1,12 +1,10 @@
 var DbInterface = function(type){
     this.type = type;
 };
-DbInterface.prototype.create = function(){
+DbInterface.prototype.add = function(){
 };
-DbInterface.prototype.get = function(){
+DbInterface.prototype.getMessages = function(){
 };
-DbInterface.prototype.update = function(){
-};
-DbInterface.prototype.delete = function(){
+DbInterface.prototype.deleteMessages = function(){
 };
 module.exports = DbInterface;

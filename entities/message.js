@@ -3,7 +3,7 @@ var Message = function(msgStr){
     this._type = undefined;
     this._locale = undefined;
     this._sendAt = undefined;
-    this._text = undefined;
+    this._layout = undefined;
     this._transport = undefined;
     msgStr && this.fill(msgStr);
 };
@@ -44,11 +44,11 @@ Message.prototype.sendAt = function(value){
     return this._sendAt = value;
 };
 
-Message.prototype.text = function(value){
+Message.prototype.layout = function(value){
     if (value === undefined){
-        return this._text;
+        return this._layout;
     }
-    return this._text = value;
+    return this._layout = value;
 };
 
 Message.prototype.transport = function(value){

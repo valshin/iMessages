@@ -8,8 +8,11 @@ var MongoDbService = function(){
 };
 utils.extend(MongoDbService, DbInterface);
 
-MongoDbService.prototype.create = function(){
-
+MongoDbService.prototype.add = function(){
+};
+MongoDbService.prototype.getMessages = function(){
+};
+MongoDbService.prototype.deleteMessages = function(){
 };
 
 module.exports = MongoDbService;

@@ -4,12 +4,11 @@ var config = require('../../../conf.js'),
     TemplateInterface = require('../templateInterface.js');
 
 
-var SimpleTemplates = function () {
-    TemplateInterface.call('SimpleTemplates');
+var SimpleTemplateService = function () {
 };
-utils.extend(SimpleTemplates, TemplateInterface);
+utils.extend(SimpleTemplateService, TemplateInterface);
 
-SimpleTemplates.prototype.TEMPLATES = {
+SimpleTemplateService.prototype.TEMPLATES = {
     default_message: {
         ru: 'Дефолтный месседж'
     },
@@ -26,22 +25,32 @@ SimpleTemplates.prototype.TEMPLATES = {
         ru: 'new_vacancy'
     }
 };
+
 /**
  * @param {Message} msg
  */
-SimpleTemplates.prototype.getMessage = function (msg) {
-    if (this.TEMPLATES[msg.type] && this.TEMPLATES[msg.type][msg.locale]) {
-        return this.TEMPLATES[msg.type][msg.locale];
+SimpleTemplateService.prototype.setMessage = function (msg) {
+
+};
+
+/**
+ * @param {String} type
+ * @param {String} locale
+ * @returns {String}
+ */
+SimpleTemplateService.prototype.getMessage = function (type, locale) {
+    if (this.TEMPLATES[type] && this.TEMPLATES[type][locale]) {
+        return this.TEMPLATES[type][locale];
     }
-    else if (this.TEMPLATES[msg.type]){
-        return this.TEMPLATES[msg.type][config.defaultLocale];
+    else if (this.TEMPLATES[type]){
+        return this.TEMPLATES[type][config.defaultLocale];
     }
-    else if (this.TEMPLATES.default_message[msg.locale]) {
-        return this.TEMPLATES.default_message[msg.locale];
+    else if (this.TEMPLATES.default_message[locale]) {
+        return this.TEMPLATES.default_message[locale];
     }
     else {
         return this.TEMPLATES.default_message[config.defaultLocale];
     }
 };
 
-module.exports = SimpleTemplates;
+module.exports = SimpleTemplateService;
